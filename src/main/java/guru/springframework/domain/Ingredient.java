@@ -2,6 +2,7 @@ package guru.springframework.domain;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Optional;
 
 /**
  * Created by jt on 6/13/17.
@@ -20,6 +21,19 @@ public class Ingredient {
 
     @ManyToOne
     private Recipe recipe;
+
+    public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom, Recipe recipe) {
+        this.description = description;
+        this.amount = amount;
+        this.uom = uom;
+        this.recipe = recipe;
+    }
+
+    public Ingredient(String ancho_chili_powder, BigDecimal bigDecimal, UnitOfMeasure tabls) {
+        this.description = description;
+        this.amount = amount;
+        this.uom = uom;
+    }
 
     public Long getId() {
         return id;
